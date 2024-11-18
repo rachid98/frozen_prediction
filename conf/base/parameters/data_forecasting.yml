@@ -1,0 +1,22 @@
+# This is a boilerplate parameters config generated for pipeline 'data_forecasting'
+# using Kedro 0.18.9.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.18.9/kedro_project_setup/configuration.html#parameters
+
+forecast_model_options:
+  seasonal: False
+  trace: True
+  features:
+    - Date 
+    - month
+    - department_code
+    # - Pression_au_niveau_mer
+    # - Variation_de_pression_en_3_heures
+    # - Direction_du_vent_moyen_10_mn
+    # - Vitesse_du_vent_moyen_10_mn
+    - Point_de_rosee
+    - Humidite
+    # - Visibilite_horizontale
+    # - Pression_station
+    - Rafales_sur_une_periode

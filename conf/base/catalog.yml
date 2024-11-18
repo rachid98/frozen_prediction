@@ -1,0 +1,49 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+weather_data:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/occitanie.csv
+  load_args:
+    delimiter: ";"
+
+df_predict_input:
+  type: pickle.PickleDataSet
+  filepath: data/02_intermediate/df_predict_input.pkl
+  versioned: true
+
+df_forecast_input:
+  type: pickle.PickleDataSet
+  filepath: data/02_intermediate/df_forecast_input.pkl
+  versioned: true
+
+dict_forecasting_model:
+  type: pickle.PickleDataSet
+  filepath: data/05_model_input/dict_forecasting_model.pickle
+  versioned: true
+
+classifier:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/classifier.pickle
+  versioned: true
+
+
+predict_row_input:
+  type: json.JSONDataSet
+  filepath: data/05_model_input/predict_row_input.json
+  versioned: true
+
+proba_frozen:
+  type: json.JSONDataSet
+  filepath: data/07_model_output/proba_frozen.json
+  versioned: true
+
+csv_generated:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/csv_region_generated.csv
+  versioned: true
+  save_args:
+    index: False
+    encoding: "utf-8"
